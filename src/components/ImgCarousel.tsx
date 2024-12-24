@@ -7,13 +7,13 @@ import { useEffect, useState } from "react";
 export default function ImgCarousel({ images }: { images: CloudinaryImg[] }) {
   const [imgIndex, setImgIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     showNextImg();
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      showNextImg();
+    }, 5000);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   function showNextImg() {
     setImgIndex((index) => {
