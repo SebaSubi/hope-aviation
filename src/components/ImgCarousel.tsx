@@ -7,13 +7,13 @@ import { useEffect, useState } from "react";
 export default function ImgCarousel({ images }: { images: CloudinaryImg[] }) {
   const [imgIndex, setImgIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      showNextImg();
-    }, 5000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     showNextImg();
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   function showNextImg() {
     setImgIndex((index) => {
@@ -32,7 +32,15 @@ export default function ImgCarousel({ images }: { images: CloudinaryImg[] }) {
 
   return (
     <div className="relative" style={{ aspectRatio: 16 / 7 }}>
-      <div className="w-full h-full overflow-hidden flex">
+      <div
+        className="w-full h-full overflow-hidden flex"
+        style={{
+          maskImage:
+            "linear-gradient(to left, black 0%, black 50%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to left, black 0%, black 50%, transparent 100%)",
+        }}
+      >
         {images.map((item: CloudinaryImg, index: number) => (
           <CldImage
             width="1980"

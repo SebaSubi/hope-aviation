@@ -13,15 +13,19 @@ export default async function Header() {
 
   return (
     <div
-      className={`max-w-full m-0 flex flex-row-reverse ${montserrat.className} antialiased`}
+      className={`max-w-full m-0 bg-white flex flex-row-reverse ${montserrat.className} antialiased relative z-0`}
     >
       <div>
         <ImgCarousel images={images.resources} />
       </div>
-      <div className="flex flex-col flex-grow text-center items-center justify-center absolute left-4 top-0 bottom-16 w-1/3 dark:bg-white dark:text-black">
-        <h1 className="dark:text-white  text-white font-semibold text-4xl mb-4">
-          Hope Aviation
-        </h1>
+      <div
+        className="flex flex-col flex-grow text-center text-[#EAE7E2] items-center justify-center absolute left-4 top-0 bottom-16 w-1/3"
+        style={{
+          textShadow:
+            "2px 2px 2px rgba(0, 0, 0, 0.2), 4px 4px 4px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <h1 className="font-semibold text-4xl mb-4">Hope Aviation</h1>
         <p className="text-white">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
           blanditiis quaerat ipsum maiores iusto. Dicta laboriosam aspernatur
